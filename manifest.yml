@@ -1,0 +1,7 @@
+---
+applications:
+  - name: speechword
+    buildpack: python_buildpack
+    memory: 512M
+    instances: 1
+    command: bash ./run.sh
