@@ -26,21 +26,10 @@ SECRET_KEY = 'bm1%6q(t+4zgyv17wo(s=^@@1ri%yzk3zrjru_vj=la6s4@+89'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-'''
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-'''
-CORS_REPLACE_HTTPS_REFERER      = False
-HOST_SCHEME                     = "http://"
-SECURE_PROXY_SSL_HEADER         = None
-SECURE_SSL_REDIRECT             = False
-SESSION_COOKIE_SECURE           = False
-CSRF_COOKIE_SECURE              = False
-SECURE_HSTS_SECONDS             = None
-SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
-SECURE_FRAME_DENY               = False
 
 
 # Application definition
