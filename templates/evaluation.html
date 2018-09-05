@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+    <div class="container">
+        <div class="col-md-12">
+            <section>
+                <table class="table">
+                    <tbody>
+                    {% if sentences %}
+                        {% for sentence in sentences %}
+                            {% include "component/sentence.html" with senstence=sentence index=forloop.counter%}
+                        {% endfor %}
+                    {% endif %}
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_script %}
+    <script src="{% static "js/main.js"%}"></script>
+    <link rel="stylesheet" href="{% static 'css/evaluation.css' %}">
+{% endblock %}

@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="{% url 'index' %}">발음 평가</a>
+
+  <div class="collapse navbar-collapse" id="navbarToggler">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'index' %}">홈</a>
+      </li>
+        {% if user.is_active %}
+            <li class="nav-item"><a href="{% url 'evaluation' %}" class="nav-link">평가하기</a></li>
+            <li class="nav-item"><a class="nav-link" href="{%url 'logout' %}">로그아웃</a></li>
+        {% else %}
+            <li class="nav-item"> <a class="nav-link" href="{% url 'login' %}">로그인</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'join' %}">회원가입</a></li>
+        {% endif %}
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,17 @@
+<tr>
+    <td style="width:25%">
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary record" id="{{ index }}">Record</button>
+            <button type="button" class="btn btn-secondary play" id="{{ index }}" disabled>Play</button>
+            <button type="button" class="btn btn-secondary send" id="{{ index }}" disabled>Send</button>
+        </div>
+    </td>
+    <td>
+        <div class="sentence" id="{{ index }}">{{ sentence }}</div>
+    </td>
+    <td>
+        <div class="stars-outer" id="{{ index }}">
+            <div class="stars-inner" id="{{ index }}"></div>
+        </div>
+    </td>
+</tr>

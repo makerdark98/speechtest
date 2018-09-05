@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block header %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-login" method="post" action="">
+                    <div class="text-center mb-4">
+                        {% csrf_token %}
+                        <h1 class="h3 mb-3 font-weight-normal">로그인</h1>
+                    </div>
+                    <div class="form-label-group">
+                        <input class="form-control" type="text" name="username" maxlength="151" required autofocus id="id_username" placeholder="Username">
+                        <label for="id_username">Username</label>
+                    </div>
+                    <div class="form-label-group">
+                        <input class="form-control" type="password" name="password" maxlength="128" required id="id_password" placeholder="Password">
+                        <label for="id_password">Password</label>
+                    </div>
+                    <div class="btn-group btn-block" role="group">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
+                        <a href="{% url 'join' %}">
+                            <button class="btn btn-lg btn-secondary btn-block" type="button">회원가입</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

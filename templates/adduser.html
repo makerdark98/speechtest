@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block header %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+{% block main %}
+    <div class="container">
+        <form class="form-signup" method="post" action="">
+            {% csrf_token %}
+            <div class="text-center mb-4">
+                <h1 class="h3 mb-3 font-weight-normal">회원가입</h1>
+            </div>
+            <div class="form-label-group">
+                <input class="form-control" type="text" name="username" maxlength="150" required id="id_username" placeholder="Username">
+                <label for="id_username">Username</label>
+            </div>
+            <div class="form-label-group">
+                <input class="form-control" type="password" name="password" maxlength="128" required id="id_password" placeholder="Password">
+                <label for="id_password">Password</label>
+            </div>
+            <div class="form-label-group">
+                <input class="form-control" type="email" name="email" maxlength="254" id="id_email" placeholder="Email">
+                <label for="id_email">Email</label>
+            </div>
+            <div class="btn-group btn-block" role="group">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">회원가입</button>
+                <a href="{% url 'login' %}">
+                    <button class="btn btn-lg btn-secondary btn-block" type="button">로그인</button>
+                </a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
